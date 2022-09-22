@@ -1,0 +1,38 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-files",
+    "rename-dev": "cd dist && rename appConfig.dev.json appConfig.json && del /f appConfig.prod.json",
+    "rename-prod": "cd dist && rename appConfig.prod.json appConfig.json && del /f appConfig.dev.json",
+    "copy-files": "copyfiles -u 1 ./src/public/* ./dist/ && copyfiles -u 1 ./src/*.json ./dist/ && cd dist && del /f appConfig.json",
+    "clean-linux": "rm -rf ./dist",
+    "clean-windows": "rmdir /s /q dist",
+    "start-dev": "npm run build && npm run rename-dev && cd dist && node app.js",
+    "start-prod": "npm run build && cd dist && node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "couch-extensions": "^1.0.4",
+    "debug": "^4.3.3",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "net": "^1.0.2",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "copyfiles": "^2.4.1",
+    "couch-routes": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  }
+}

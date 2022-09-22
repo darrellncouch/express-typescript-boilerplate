@@ -1,0 +1,20 @@
+import { IAppConfig } from "./types/interfaces/IAppConfig";
+
+export const appConfig: IAppConfig = {
+    jwt: {
+        myprivatekey: "<@V,5]4,V+y>T695L5sqRe/gz*y%>>ny",
+        myprivatekey2: "+!tjh7@EfZmgPJS$UU!VrCwj*n@bQt@7YGGCSMy%G5-vZgmPC&yxqZ*T*tQK5tUR",
+        postmanKey: "PMAK-60892875f490bc00374a6118-a2d45aba01984a9e2244ec1698bbecf0fe"
+    },
+    data: {
+        type: "postgres",
+        host: "localhost",
+        port: 5433,
+        username: "postgres",
+        password: "dncouch3",
+        database: "",
+        entities: [],
+        synchronize: true,
+        logging: false
+    }
+}
